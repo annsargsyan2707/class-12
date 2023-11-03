@@ -1,0 +1,5 @@
+Առաջին օրինակում  then կտպի 1,կվերադարձնի նոր promise ,catch չի մտնի, որովհետև resolve է, հաջորդ then ով կտպի 2 ու error ով կկանգնի:
+Երկրորդ օրինակում  then կտպի 11,կվերադարձնի նոր promise, հետո հաջորդ  then կտպի 12, կստեղծվի error, catch կաշխատի, կտպի 13, կվերադարձնի նոր promise, որի համար կաշխատի then ու կտպի 15:
+Երրորդ օրինակում նախ կտպի գլոբալի 1, հետո promise.then ով Error կտա, կմտնի catch, "Api Error" կտպի,  արժեքը կմտնի then ի մեջ ու կտպվի "2",վերջում setTimeout ի 2 ը կտպվի :
+Չորրորդ օրինակում նախ կտպի գլոբալ console 1, հետո կտպի then console 3, catch չի մտնի, կմտնի finally, բայց քանի որ finally արժեք չի ստանում ու թեպետ promise է վերադարձնում, բայց արժեք չի փոխանցում, կտպի undefined և console ի 5, առաջին then ի արժեքը կփոխանցվի վերջինին, որը կտպի 1:
+Հինգերորդ օրինակում setTimeout կմտնի tasq queue, promise կմտնի ստեք, կտպի 5, հետո կտպի global console, որտեղ a ն արդեն կլինի 25, then կմտնի microtask queue, հետո կմտնի ստեք, կտպի final result undefined, քանի որ then ոչինչ resolve չէր արել, վերջում setTimeout կտպի 25:
